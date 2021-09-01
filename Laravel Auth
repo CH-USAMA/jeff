@@ -1,0 +1,7 @@
+Go into your laravel Project
+open gitbash cli
+Run the Commands
+>>composer require laravel/ui
+>>php artisan ui bootstrap --auth
+>>npm install && npm run dev
+>>npm watch 
