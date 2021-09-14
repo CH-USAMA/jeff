@@ -12,3 +12,22 @@ Or, you may install the Laravel Installer as a global Composer dependency:
 
 >php artisan serve
 
+after installing the project Configure Auth in it
+ 
+ Run the Commands
+>>composer require laravel/ui
+>>php artisan ui bootstrap --auth
+>>npm install && npm run dev
+>>npm  run watch 
+
+after that attach database to it
+ than RUN MIGRATIONS
+    
+than Add data in the tables
+
+create table roles
+add data in roles table
+add roles ID in the user table
+
+
+
