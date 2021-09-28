@@ -1,0 +1,20 @@
+Link for Algorithms 
+https://www.geeksforgeeks.org/searching-algorithms/
+
+
+Creating a new middleware
+
+>ProjectDirectory
+Open gitbash
+
+php artisan make:middleware NAMEOFMIDDLEWARE
+
+go to the kernel.php file located in App folder
+add the Path of middleware along its name in routemiddleware
+'THENAMETOUSEFORMIDDLEWARE'=> PATH_OF_THE_MIDDLEWARE::class/NAMEOFTHEMIDDLEWARE,
+
+define your logic on the middleware
+
+Apply the middleware on the Route
+Route::()->middleware('THENAMETOUSEFORMIDDLEWARE');
+
