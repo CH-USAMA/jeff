@@ -1,0 +1,24 @@
+public function checknum($number)
+    {
+        if($number>1)
+        {
+            throw new Exception("Value must be 1 or below");
+        }
+        return true;
+    }
+
+
+    public function trycatch()
+    {
+        try{ //try expression
+            $this->checknum(2);    
+        }
+        catch(exception $e) //catch expression
+        {
+           
+            echo 'Message '.$e->getMessage();    
+        }
+        exit();
+        print_r("your number i less than one congratulations !!");
+
+    }
