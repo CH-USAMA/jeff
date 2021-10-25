@@ -1,0 +1,32 @@
+https://spatie.be/docs/laravel-activitylog/v4/introduction
+
+go to installation and setup
+https://spatie.be/docs/laravel-activitylog/v4/installation-and-setup
+
+
+than you have to run following command in gitbash 
+
+composer require spatie/laravel-activitylog
+
+Run Command 
+php artisan config:clear
+
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-migrations"
+
+than Run
+
+php artisan migrate
+
+php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-config"
+
+Now in the controller where you want to use it
+use this namespace
+
+use Spatie\Activitylog\Models\Activity;
+
+
+
+for Using in model use
+
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\Activitylog\LogOptions;
