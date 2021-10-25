@@ -1,0 +1,54 @@
+https://spatie.be/docs/laravel-permission/v5/introduction
+select Installation in laravel
+
+
+ composer require spatie/laravel-permission
+ 
+ 
+ Optional: The service provider will automatically get registered. Or you may manually add the service provider in your config/app.php file:
+
+'providers' => [
+    // ...
+    Spatie\Permission\PermissionServiceProvider::class,
+];
+
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+ php artisan optimize:clear
+ # or
+ php artisan config:clear
+ 
+ 
+  php artisan migrate
+  
+  
+  
+  
+  For using it in models
+  
+  namespace this line
+  
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+
+class User extends Authenticatable
+{
+    use HasRoles;
+
+    // ...
+}
+
+
+
+For Controller
+
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+
+
+
+Create roles and permissions by
+$role = Role::create(['name' => 'writer']);  // roles
+$permission = Permission::create(['name' => 'edit articles']); //permissions
