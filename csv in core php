@@ -1,0 +1,55 @@
+ <?php
+        
+        //example with query
+
+ 
+                ob_end_clean();
+
+            $csv_headers_array = array("number","name");
+            // number,
+
+             $get_user_data = "SELECT * from users";
+            $res_user_data =  mysqli_query($connect,$get_user_data);
+
+            $fp = fopen('php://output', 'w');
+            header('Content-Type: text/csv');
+            header('Content-Disposition: attachment; filename="jeff.csv"');
+            header('Pragma: no-cache');
+            header('Expires: 0');
+
+            fputcsv($fp, $csv_headers_array, ',', '"'); //number,name
+
+            while ($row = mysqli_fetch_array($query_get_all_bill)) {
+              
+            $my_data_array = array($row['number'],$row['name']);
+            
+            fputcsv($fp, $my_data_array, ',', '"');
+            }
+            fclose($fp);
+            exit();
+          
+//simple example
+
+            $fp = fopen('php://output', 'w');
+            header('Content-Type: text/csv');
+            header('Content-Disposition: attachment; filename="jeff.csv"');
+            header('Pragma: no-cache');
+            header('Expires: 0');
+            $header = array("name","address")
+            fputcsv($fp, $header, ',', '"'); //name,address
+
+         
+              
+            $data = array(89809,"usama");
+            fputcsv($fp, $data, ',', '"');
+            $data1 = array(89809,"usama");
+            fputcsv($fp, $data2, ',', '"');
+            $data = array(89809,"usama");
+            fputcsv($fp, $data3, ',', '"');
+           
+            
+            fputcsv($fp, $my_data_array, ',', '"');
+         
+            fclose($fp);
+
+?>
